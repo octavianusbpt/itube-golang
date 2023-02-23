@@ -11,7 +11,7 @@ import (
 	"github.com/octavianusbpt/itube-golang/routes"
 )
 
-func init() {
+func main() {
 
 	// Initialize environment variables
 	err := godotenv.Load()
@@ -19,10 +19,9 @@ func init() {
 
 	// Initialize database
 	database.InitializeDatabase()
-	database.SyncDB()
-}
 
-func main() {
+	// Migrate tables
+	database.SyncDatabase()
 
 	// Setup App
 	app := fiber.New()

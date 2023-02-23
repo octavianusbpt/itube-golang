@@ -1,8 +1,9 @@
 module github.com/octavianusbpt/itube-golang
 
-go 1.19
+go 1.17
 
 require (
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/joho/godotenv v1.5.1
 	gorm.io/driver/sqlserver v1.4.2
 	gorm.io/gorm v1.24.5
@@ -29,6 +30,6 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.44.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/crypto v0.6.0 // indirect
+	golang.org/x/crypto v0.6.0
 	golang.org/x/sys v0.5.0 // indirect
 )

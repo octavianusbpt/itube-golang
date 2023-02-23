@@ -1,7 +1,6 @@
 package database
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/octavianusbpt/itube-golang/helpers"
@@ -14,14 +13,14 @@ var DB *gorm.DB
 
 // Initialize database connection
 func InitializeDatabase() {
+	var err error
 	dsn := os.Getenv("DB_URL")
-	DB, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
+	DB, err = gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
 
-	fmt.Println(DB)
 	helpers.PanicIfError(err)
 }
 
-// Migrate database
-func SyncDB() {
+func SyncDatabase() {
+	// Migrate database
 	DB.AutoMigrate(&models.User{}, &models.Video{})
 }
